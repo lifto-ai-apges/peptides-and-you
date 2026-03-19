@@ -61,7 +61,7 @@ const ProductDetails = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary text-[10px] uppercase font-extrabold tracking-widest rounded-full mb-8 border border-primary/10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-10 border-primary-10 text-[10px] uppercase font-extrabold tracking-widest rounded-full mb-8 border border-primary/10">
               {product.category}
             </div>
             
@@ -80,7 +80,7 @@ const ProductDetails = () => {
 
             {/* Benefits / Research Indications */}
             <div className="bg-bg-alt p-10 rounded-3xl mb-12 border border-border">
-              <h3 className="text-xl font-bold mb-8 flex items-center gap-3 outfit-font underline decoration-primary/20 decoration-4 underline-offset-8">Research Indicators</h3>
+              <h3 className="text-xl font-bold mb-8 flex items-center gap-3 outfit-font underline decoration-primary-20 decoration-4 underline-offset-8">Research Indicators</h3>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {product.benefits.map((benefit, i) => (
                   <li key={i} className="flex items-start gap-4 text-sm font-semibold text-slate-700 leading-snug">
@@ -95,7 +95,7 @@ const ProductDetails = () => {
               <button className="flex-1 btn-primary py-5 flex items-center justify-center gap-3 text-lg">
                 <ShoppingCart size={22} /> Add to Procurement
               </button>
-              <button className="px-8 btn-secondary py-5 flex items-center justify-center gap-3 text-lg border-primary/20 text-primary hover:bg-primary/5">
+              <button className="px-8 btn-secondary py-5 flex items-center justify-center gap-3 text-lg border-primary/20 text-primary hover:bg-primary-5">
                 <FileText size={22} /> SDS / COA Data
               </button>
             </div>

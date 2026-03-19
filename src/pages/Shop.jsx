@@ -24,7 +24,7 @@ const Shop = () => {
     <div className="shop-page pt-32 pb-20 bg-white">
       <div className="container">
         <div className="mb-16 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/5 border border-primary/10 rounded-full mb-6 text-primary text-[10px] font-bold uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-5 border-primary-10 rounded-full mb-6 text-primary text-[10px] font-bold uppercase tracking-widest">
              <ShieldCheck size={14} /> Full Batch Transparency
           </div>
           <h1 className="text-5xl md:text-6xl mb-6 tracking-tight font-bold">Laboratory Inventory</h1>
@@ -58,7 +58,7 @@ const Shop = () => {
               placeholder="Filter by molecule name..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white border border-border rounded-xl pl-12 pr-4 py-4 text-sm outline-none focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all font-semibold"
+              className="w-full bg-white border border-border rounded-xl pl-12 pr-4 py-4 text-sm outline-none focus:border-primary focus:ring-4 focus:ring-primary-5 transition-all font-semibold"
             />
           </div>
         </div>

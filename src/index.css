@@ -211,6 +211,9 @@ button {
 .text-5xl { font-size: 48px; }
 .text-6xl { font-size: 60px; }
 .text-7xl { font-size: 72px; }
+.decoration-primary-20 { text-decoration-color: rgba(37, 99, 235, 0.2); }
+.decoration-primary-4 { text-decoration-thickness: 4px; }
+.focus\:ring-primary-5:focus { box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.05); }
 .font-bold { font-weight: 700; }
 .font-semibold { font-weight: 600; }
 .text-center { text-align: center; }
@@ -225,7 +228,9 @@ button {
 .bg-primary-5 { background-color: rgba(37, 99, 235, 0.05); }
 .bg-primary-10 { background-color: rgba(37, 99, 235, 0.1); }
 .bg-primary-20 { background-color: rgba(37, 99, 235, 0.2); }
+.bg-secondary-10 { background-color: rgba(14, 165, 233, 0.1); }
 .bg-secondary-20 { background-color: rgba(14, 165, 233, 0.2); }
+.bg-accent-10 { background-color: rgba(244, 63, 94, 0.1); }
 .bg-accent-20 { background-color: rgba(244, 63, 94, 0.2); }
 .bg-surface { background-color: var(--surface); }
 .bg-surface-alt { background-color: var(--surface-alt); }

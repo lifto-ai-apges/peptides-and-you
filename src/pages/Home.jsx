@@ -49,7 +49,7 @@ const Home = () => {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             <div className="bg-bg-alt p-12 rounded-3xl border border-border transition-all hover:bg-white hover:shadow-xl group">
-              <div className="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-all">
+              <div className="bg-primary-10 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-all">
                 <Microscope size={32} />
               </div>
               <h3 className="text-2xl mb-4 outfit-font font-bold">Lab-Verified Purity</h3>
@@ -59,7 +59,7 @@ const Home = () => {
             </div>
             
             <div className="bg-bg-alt p-12 rounded-3xl border border-border transition-all hover:bg-white hover:shadow-xl group">
-              <div className="bg-secondary/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-secondary group-hover:text-white transition-all">
+              <div className="bg-secondary-10 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-secondary group-hover:text-white transition-all">
                 <Beaker size={32} />
               </div>
               <h3 className="text-2xl mb-4 outfit-font font-bold">Stable Synthesis</h3>
@@ -69,7 +69,7 @@ const Home = () => {
             </div>
             
             <div className="bg-bg-alt p-12 rounded-3xl border border-border transition-all hover:bg-white hover:shadow-xl group">
-              <div className="bg-accent/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-white transition-all">
+              <div className="bg-accent-10 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-white transition-all">
                 <ShieldCheck size={32} />
               </div>
               <h3 className="text-2xl mb-4 outfit-font font-bold">Global Integrity</h3>
@@ -83,7 +83,7 @@ const Home = () => {
 
       {/* Trust Quote / Conversion Section */}
       <section className="section-padding bg-slate-900 text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/20 blur-[150px] -mr-48"></div>
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-primary-20 blur-[150px] -mr-48"></div>
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-6xl mb-10 tracking-tight leading-tight font-bold">
