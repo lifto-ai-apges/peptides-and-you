@@ -1,63 +1,94 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Activity, Zap, ShieldCheck } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Truck, Award } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <div className="relative min-h-[85vh] flex items-center pt-24 pb-12 overflow-hidden bg-bg-alt">
-      {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-5 blur-[100px] rounded-full -mr-32 -mt-32"></div>
-      
-      <div className="container relative z-10 w-full">
-        <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
+    <section style={{
+      paddingTop: 200, paddingBottom: 80,
+      background: '#111827',
+      position: 'relative', overflow: 'hidden',
+    }}>
+      {/* Subtle gradient accent - no edge glow */}
+      <div style={{
+        position: 'absolute', top: '50%', left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 600, height: 600,
+        background: 'radial-gradient(circle, rgba(230,57,70,0.08) 0%, transparent 70%)',
+        pointerEvents: 'none',
+      }} />
+
+      <div className="container" style={{position: 'relative', zIndex: 2}}>
+        <div style={{maxWidth: 700, margin: '0 auto', textAlign: 'center'}}>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col items-center"
+            transition={{ duration: 0.5 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-border rounded-full mb-8 shadow-sm">
-              <ShieldCheck size={16} className="text-secondary" />
-              <span className="text-[10px] font-extrabold uppercase tracking-widest text-text-muted">Certified Research Standards</span>
+            {/* Badge */}
+            <div style={{
+              display: 'inline-flex', alignItems: 'center', gap: 8,
+              padding: '6px 14px', borderRadius: 8,
+              background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)',
+              marginBottom: 28, fontSize: 11, fontWeight: 700,
+              textTransform: 'uppercase', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.7)',
+            }}>
+              <ShieldCheck size={14} color="#E63946" />
+              Certified Research Standards · 99.8% Purity
             </div>
-            
-            <h1 className="text-5xl md:text-7xl mb-8 leading-[1.05] tracking-tight">
-              Premium Grade <br />
-              <span className="glow-text font-extrabold">Peptide Research</span>
+
+            {/* Heading - HIGH CONTRAST */}
+            <h1 className="outfit" style={{
+              fontSize: 'clamp(32px, 5.5vw, 60px)',
+              fontWeight: 800, lineHeight: 1.1,
+              marginBottom: 20, color: '#FFFFFF',
+              letterSpacing: '-0.02em',
+            }}>
+              Premium Grade{' '}
+              <span style={{color: '#E63946'}}>Peptide Research</span>
             </h1>
-            
-            <p className="text-xl text-text-muted mb-12 max-w-2xl leading-relaxed">
-              Accelerate your biological discovery with lab-verified, 99%+ purity peptides. Designed for clinical-grade precision and reliability.
+
+            {/* Subtitle - VISIBLE */}
+            <p style={{
+              fontSize: 17, color: 'rgba(255,255,255,0.65)',
+              maxWidth: 520, margin: '0 auto 36px', lineHeight: 1.7,
+            }}>
+              Accelerate your biological discovery with lab-verified, 99%+ purity peptides. UK-based, next-day delivery available.
             </p>
 
-            <div className="flex flex-wrap gap-5 justify-center">
-              <Link to="/shop" className="btn-primary flex items-center gap-2 text-lg">
-                View Full Catalog <ArrowRight size={20} />
+            {/* CTAs */}
+            <div style={{display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 48}}>
+              <Link to="/shop" className="btn-primary" style={{padding: '14px 32px', fontSize: 15}}>
+                View Full Catalog <ArrowRight size={18} />
               </Link>
-              <Link to="/#about" className="btn-secondary text-lg">
-                Stability Data
+              <Link to="/#about" className="btn-outline-white" style={{padding: '14px 32px', fontSize: 15}}>
+                Learn More
               </Link>
             </div>
 
-            <div className="mt-16 pt-8 border-t border-border flex flex-wrap justify-center items-center gap-10 md:gap-16">
-              <div className="flex flex-col items-center">
-                <span className="text-2xl font-bold text-slate-900 line-height-1">99.8%</span>
-                <span className="text-xs font-bold text-text-muted uppercase tracking-widest">Average Purity</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <span className="text-2xl font-bold text-slate-900 line-height-1">24h</span>
-                <span className="text-xs font-bold text-text-muted uppercase tracking-widest">Global Express</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <span className="text-2xl font-bold text-slate-900 line-height-1">COA</span>
-                <span className="text-xs font-bold text-text-muted uppercase tracking-widest">Batch Included</span>
-              </div>
+            {/* Stats */}
+            <div style={{
+              display: 'flex', justifyContent: 'center', gap: 48, flexWrap: 'wrap',
+              paddingTop: 28, borderTop: '1px solid rgba(255,255,255,0.1)',
+            }}>
+              {[
+                { value: '99.8%', label: 'Average Purity' },
+                { value: '24h', label: 'UK Express' },
+                { value: 'COA', label: 'Batch Included' },
+              ].map((stat) => (
+                <div key={stat.label} style={{textAlign: 'center'}}>
+                  <div className="outfit" style={{fontSize: 26, fontWeight: 800, color: '#FFFFFF'}}>{stat.value}</div>
+                  <div style={{fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.45)', marginTop: 2}}>
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
             </div>
           </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

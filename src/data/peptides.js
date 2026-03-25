@@ -12,6 +12,9 @@ export const peptides = [
       'Neuroprotective properties'
     ],
     category: 'Recovery',
+    type: 'peptide',
+    size: '5MG',
+    rating: 5,
     price: 49.99,
     seoKeywords: ['BPC-157', 'tissue repair peptide', 'ligament healing', 'gut health peptide']
   },
@@ -28,6 +31,9 @@ export const peptides = [
       'Faster recovery from athletic injuries'
     ],
     category: 'Recovery',
+    type: 'peptide',
+    size: '5MG',
+    rating: 5,
     price: 54.99,
     seoKeywords: ['TB-500', 'Thymosin Beta-4', 'systemic recovery', 'muscle repair']
   },
@@ -43,7 +49,11 @@ export const peptides = [
       'Optimized for high-performance athletes'
     ],
     category: 'Stacks',
+    type: 'stack',
+    size: 'Combo',
+    rating: 5,
     price: 94.99,
+    originalPrice: 104.98,
     seoKeywords: ['Wolverine Stack', 'BPC-157 TB-500 stack', 'ultimate recovery peptide']
   },
   {
@@ -59,6 +69,9 @@ export const peptides = [
       'Potent antioxidant and anti-inflammatory'
     ],
     category: 'Beauty',
+    type: 'peptide',
+    size: '100MG',
+    rating: 5,
     price: 44.99,
     seoKeywords: ['GHK-Cu', 'copper peptide', 'skin rejuvenation', 'hair growth peptide']
   },
@@ -74,6 +87,9 @@ export const peptides = [
       'Triple-action hormone receptor targeting'
     ],
     category: 'Metabolic',
+    type: 'peptide',
+    size: '5MG',
+    rating: 5,
     price: 129.99,
     seoKeywords: ['Retatrutide', 'weight loss peptide', 'metabolic health', 'GLP-1 GIP Glucagon']
   },
@@ -89,6 +105,9 @@ export const peptides = [
       'Enhances mitochondrial function'
     ],
     category: 'Longevity',
+    type: 'peptide',
+    size: '10MG',
+    rating: 5,
     price: 59.99,
     seoKeywords: ['Epithalon', 'longevity peptide', 'telomere lengthening', 'anti-aging']
   },
@@ -104,6 +123,9 @@ export const peptides = [
       'Highly targeted fat-burning mechanism'
     ],
     category: 'Metabolic',
+    type: 'peptide',
+    size: '5MG',
+    rating: 5,
     price: 64.99,
     seoKeywords: ['AOD-9604', 'fat loss peptide', 'growth hormone fragment', 'lipolysis']
   },
@@ -119,6 +141,9 @@ export const peptides = [
       'Reduces mental fatigue'
     ],
     category: 'Nootropic',
+    type: 'peptide',
+    size: '5MG',
+    rating: 5,
     price: 49.99,
     seoKeywords: ['Semax', 'nootropic peptide', 'cognitive enhancement', 'focus booster']
   },
@@ -134,6 +159,9 @@ export const peptides = [
       'No sedative or cognitive-impairing effects'
     ],
     category: 'Nootropic',
+    type: 'peptide',
+    size: '5MG',
+    rating: 5,
     price: 49.99,
     seoKeywords: ['Selank', 'anxiety peptide', 'stress relief', 'emotional balance']
   },
@@ -149,6 +177,9 @@ export const peptides = [
       'Enhances cellular repair'
     ],
     category: 'Performance',
+    type: 'peptide',
+    size: '5MG',
+    rating: 5,
     price: 59.99,
     seoKeywords: ['CJC-1295', 'GHRH analog', 'muscle growth peptide', 'anti-aging']
   },
@@ -164,14 +195,17 @@ export const peptides = [
       'Improves sleep and energy levels'
     ],
     category: 'Performance',
+    type: 'peptide',
+    size: '5MG',
+    rating: 5,
     price: 54.99,
     seoKeywords: ['Ipamorelin', 'GHRP', 'growth hormone secretagogue', 'natural GH support']
   },
   {
     id: 'hgh',
-    name: 'HGH',
-    shortDescription: 'Human Growth Hormone for comprehensive physical optimization.',
-    description: 'HGH is the master hormone for growth, cellular regeneration, and metabolic regulation. It is essential for maintaining tissues, bone density, and overall vitality.',
+    name: 'HGH Fragment 176-191',
+    shortDescription: 'Growth Hormone fragment for comprehensive physical optimization.',
+    description: 'HGH Fragment 176-191 is a modified fragment of amino acids 176-191 of the human growth hormone polypeptide. It is essential for fat metabolism and maintaining lean body composition.',
     benefits: [
       'Enhances tissue and bone regeneration',
       'Optimizes body composition and metabolism',
@@ -179,6 +213,9 @@ export const peptides = [
       'Supports comprehensive physical recovery'
     ],
     category: 'Performance',
+    type: 'peptide',
+    size: '5MG',
+    rating: 5,
     price: 199.99,
     seoKeywords: ['HGH', 'Human Growth Hormone', 'body optimization', 'regeneration']
   }

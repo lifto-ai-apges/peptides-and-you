@@ -1,61 +1,54 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ShoppingCart, ArrowUpRight, ShieldCheck, Activity } from 'lucide-react';
+import { FlaskConical, Star } from 'lucide-react';
+
+const Stars = ({ rating = 5 }) => (
+  <div className="stars">
+    {[...Array(5)].map((_, i) => (
+      <Star key={i} size={13}
+        fill={i < rating ? '#E63946' : 'transparent'}
+        color={i < rating ? '#E63946' : '#D4D4D8'}
+        strokeWidth={1.5} />
+    ))}
+  </div>
+);
 
 const ProductCard = ({ product }) => {
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 15 }}
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="card-panel group overflow-hidden bg-white"
+      className="product-card"
     >
-      <div className="relative aspect-[4/5] bg-bg-alt flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-5 to-transparent"></div>
-        
-        {/* Visual Representation */}
-        <div className="relative w-40 h-40 flex items-center justify-center rounded-2xl bg-white shadow-sm border border-border group-hover:scale-105 transition-transform duration-500">
-           <Activity size={48} className="text-primary opacity-10 group-hover:opacity-30 transition-opacity" />
-           <span className="absolute bottom-4 right-4 text-[10px] font-mono text-text-muted opacity-40">BATCH: V2.1</span>
-        </div>
-        
-        {/* Category Badge */}
-        <div className="absolute top-4 left-4 bg-white opacity-90 backdrop-blur-sm text-primary text-[10px] uppercase font-extrabold px-3 py-1 rounded-full border border-primary-10 shadow-sm">
-          {product.category}
-        </div>
-        
-        {/* Quick Add (Professional Style) */}
-        <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-400 bg-white opacity-95 backdrop-blur-md border-t border-border">
-           <button className="w-full btn-primary py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2">
-             <ShoppingCart size={14} /> Quick Add
-           </button>
+      <div className="product-card-image">
+        {product.type === 'stack' && <div className="badge-top">Stack</div>}
+        <div className="icon-circle">
+          <FlaskConical size={40} color="#E63946" strokeWidth={1.3} style={{opacity: 0.35}} />
         </div>
       </div>
 
-      <div className="p-6">
-        <div className="flex justify-between items-start mb-3">
-          <Link to={`/product/${product.id}`}>
-            <h3 className="text-xl font-bold hover:text-primary transition-colors outfit-font leading-tight">{product.name}</h3>
+      <div className="product-card-body">
+        <div className="card-title-row">
+          <Link to={`/product/${product.id}`} style={{textDecoration: 'none'}}>
+            <h3 className="card-title">{product.name}</h3>
           </Link>
-          <span className="text-xl font-bold text-slate-900">${product.price}</span>
+          {product.size && <span className="card-size">{product.size}</span>}
         </div>
-        
-        <p className="text-sm text-text-muted mb-6 line-clamp-2 leading-relaxed h-10">
-          {product.shortDescription}
-        </p>
-        
-        <div className="flex items-center justify-between pt-4 border-t border-border-light">
-           <Link 
-             to={`/product/${product.id}`} 
-             className="inline-flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-widest text-primary hover:text-primary-hover transition-colors"
-           >
-             Technical Specs <ArrowUpRight size={14} />
-           </Link>
-           <div className="flex items-center gap-1 text-[10px] font-bold text-emerald-600 uppercase">
-             <ShieldCheck size={12} /> In Stock
-           </div>
+
+        <Stars rating={product.rating} />
+
+        <div className="card-price">
+          {product.originalPrice && (
+            <span className="old-price">£{product.originalPrice.toFixed(2)}</span>
+          )}
+          £{product.price.toFixed(2)}
         </div>
+
+        <Link to={`/product/${product.id}`} className="card-btn">
+          Add to basket
+        </Link>
       </div>
     </motion.div>
   );

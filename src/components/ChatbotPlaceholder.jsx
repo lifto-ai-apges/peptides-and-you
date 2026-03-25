@@ -1,79 +1,99 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, Bot, User, CornerDownRight } from 'lucide-react';
+import { MessageCircle, X, Send, Bot, CornerDownRight } from 'lucide-react';
 
 const ChatbotPlaceholder = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState([
-    { text: 'Hello! I am the Peptides and You research assistant. How can I help with your scientific inquiries today?', sender: 'bot' }
+  const [messages] = useState([
+    { text: 'Hello! I am the Peptides and You research assistant. How can I help with your scientific enquiries today?', sender: 'bot' }
   ]);
 
-  const toggleChat = () => setIsOpen(!isOpen);
-
   return (
-    <div className="fixed bottom-8 right-8 z-100">
+    <div style={{position: 'fixed', bottom: 24, right: 24, zIndex: 200}}>
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            initial={{ opacity: 0, scale: 0.92, y: 16 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="bg-white w-350 sm:w-400 h-[550px] mb-4 flex flex-col overflow-hidden shadow-2xl rounded-2xl border border-border"
+            exit={{ opacity: 0, scale: 0.92, y: 16 }}
+            style={{
+              width: 340, height: 480, marginBottom: 12,
+              background: '#fff', borderRadius: 16,
+              boxShadow: '0 16px 48px rgba(0,0,0,0.15)',
+              border: '1px solid var(--border)',
+              display: 'flex', flexDirection: 'column', overflow: 'hidden',
+            }}
           >
             {/* Header */}
-            <div className="bg-primary p-6 flex justify-between items-center text-white">
-              <div className="flex items-center gap-3">
-                <div className="bg-white/20 p-2 rounded-lg backdrop-blur-md">
-                   <Bot size={24} />
+            <div style={{
+              background: '#E63946', padding: '16px 18px',
+              display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#fff',
+            }}>
+              <div style={{display: 'flex', alignItems: 'center', gap: 10}}>
+                <div style={{background: 'rgba(255,255,255,0.2)', padding: 7, borderRadius: 8}}>
+                  <Bot size={20} />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold outfit-font">Lab Assistant AI</h4>
-                  <p className="text-[10px] opacity-80 font-bold uppercase tracking-widest">Scientific Core Active</p>
+                  <div className="outfit" style={{fontSize: 14, fontWeight: 700}}>Lab Assistant AI</div>
+                  <div style={{fontSize: 10, opacity: 0.8, fontWeight: 600, letterSpacing: '0.06em'}}>ONLINE</div>
                 </div>
               </div>
-              <button onClick={toggleChat} className="text-white/70 hover:text-white transition-colors p-1">
-                <X size={24} />
+              <button onClick={() => setIsOpen(false)} style={{background: 'none', color: 'rgba(255,255,255,0.7)', padding: 4}}>
+                <X size={20} />
               </button>
             </div>
 
-            {/* Messages Area */}
-            <div className="flex-1 p-6 overflow-y-auto flex flex-col gap-6 bg-slate-50">
+            {/* Messages */}
+            <div style={{flex: 1, padding: 16, overflowY: 'auto', background: '#FAFAFA', display: 'flex', flexDirection: 'column', gap: 14}}>
               {messages.map((msg, i) => (
-                <div key={i} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-                  <div className={`max-w-[85%] p-4 rounded-2xl text-sm shadow-sm leading-relaxed ${
-                    msg.sender === 'user' 
-                      ? 'bg-primary text-white rounded-tr-none' 
-                      : 'bg-white text-slate-700 border border-border rounded-tl-none'
-                  }`}>
+                <div key={i} style={{display: 'flex', justifyContent: msg.sender === 'user' ? 'flex-end' : 'flex-start'}}>
+                  <div style={{
+                    maxWidth: '85%', padding: '10px 14px', borderRadius: 12,
+                    fontSize: 13, lineHeight: 1.6,
+                    ...(msg.sender === 'user'
+                      ? { background: '#E63946', color: '#fff', borderBottomRightRadius: 4 }
+                      : { background: '#fff', color: 'var(--text-secondary)', border: '1px solid var(--border)', borderBottomLeftRadius: 4 }
+                    ),
+                  }}>
                     {msg.text}
                   </div>
                 </div>
               ))}
-              <div className="flex items-center gap-2 text-[10px] font-bold text-text-muted uppercase tracking-widest mt-2 px-1">
-                 <CornerDownRight size={12} /> Typical response time: ~2s
+              <div style={{display: 'flex', alignItems: 'center', gap: 6, fontSize: 10, fontWeight: 600, color: 'var(--text-light)', marginTop: 4}}>
+                <CornerDownRight size={10} /> Typical response: ~2s
               </div>
             </div>
 
-            {/* Input Area */}
-            <div className="p-4 bg-white border-t border-border flex gap-3">
-              <input 
-                type="text" 
-                placeholder="Ask technical questions..." 
-                className="flex-1 bg-slate-50 border border-border rounded-xl px-4 py-3 text-sm outline-none focus:border-primary transition-all font-medium"
-              />
-              <button className="bg-primary w-12 h-12 rounded-xl text-white flex items-center justify-center hover:bg-primary-hover shadow-lg shadow-primary/20">
-                <Send size={20} />
+            {/* Input */}
+            <div style={{padding: 12, background: '#fff', borderTop: '1px solid var(--border)', display: 'flex', gap: 8}}>
+              <input type="text" placeholder="Ask a question..."
+                style={{
+                  flex: 1, background: '#F4F4F5', border: '1px solid var(--border)', borderRadius: 8,
+                  padding: '9px 12px', fontSize: 13, outline: 'none', fontFamily: 'inherit', color: 'var(--text)',
+                }} />
+              <button style={{
+                background: '#E63946', width: 38, height: 38, borderRadius: 8,
+                color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center',
+              }}>
+                <Send size={16} />
               </button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <button
-        onClick={toggleChat}
-        className="w-16 h-16 rounded-full bg-primary shadow-xl shadow-primary/20 flex items-center justify-center text-white hover:scale-110 transition-transform active:scale-95 border-4 border-white"
+      <button onClick={() => setIsOpen(!isOpen)}
+        style={{
+          width: 52, height: 52, borderRadius: '50%',
+          background: '#E63946', color: '#fff',
+          boxShadow: '0 4px 16px rgba(230,57,70,0.35)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          border: '3px solid #fff', transition: 'transform 0.2s',
+        }}
+        onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.08)'}
+        onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
       >
-        {isOpen ? <X size={32} /> : <MessageCircle size={32} />}
+        {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
       </button>
     </div>
   );

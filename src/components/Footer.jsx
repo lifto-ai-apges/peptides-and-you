@@ -1,68 +1,104 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Droplets, Instagram, Twitter, Facebook, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, MapPin, FlaskConical, Instagram, Twitter, Facebook, ShieldCheck } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="footer bg-slate-900 pt-24 pb-12 text-white/90">
-      <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
-          <div className="col-span-1 md:col-span-1">
-            <div className="flex items-center gap-2 mb-8">
-              <div className="p-1.5 bg-primary rounded-lg">
-                 <Droplets className="text-white" size={24} />
+    <footer>
+      {/* Main Footer */}
+      <div style={{background: '#111827', color: '#fff', paddingTop: 56, paddingBottom: 40}}>
+        <div className="container">
+          <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 40, marginBottom: 40}}>
+            {/* Brand */}
+            <div>
+              <div style={{display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16}}>
+                <div style={{width: 32, height: 32, background: '#E63946', borderRadius: 7, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                  <FlaskConical size={17} color="#fff" />
+                </div>
+                <span className="outfit" style={{fontSize: 17, fontWeight: 800, color: '#fff'}}>
+                  Peptides<span style={{fontStyle: 'italic'}}>andYou</span>
+                </span>
               </div>
-              <span className="text-2xl font-bold outfit-font tracking-tight text-white">
-                Peptides<span className="italic">andYou</span>
-              </span>
+              <p style={{color: 'rgba(255,255,255,0.55)', fontSize: 13, lineHeight: 1.7, marginBottom: 20}}>
+                UK-based supplier of premium research peptides. ISO-certified laboratory protocols ensure 99.8% average purity across our entire catalog.
+              </p>
+              <div style={{display: 'flex', gap: 8}}>
+                {[Instagram, Twitter, Facebook].map((Icon, i) => (
+                  <a key={i} href="#" style={{
+                    padding: 8, background: 'rgba(255,255,255,0.06)', borderRadius: 6,
+                    border: '1px solid rgba(255,255,255,0.08)', display: 'flex',
+                  }}>
+                    <Icon size={15} color="rgba(255,255,255,0.6)" />
+                  </a>
+                ))}
+              </div>
             </div>
-            <p className="text-white/60 mb-8 leading-relaxed text-sm">
-              World-leading supplier of high-purity research peptides. Our laboratory protocols ensure 99.8% average purity across our entire catalog.
+
+            {/* Catalog */}
+            <div>
+              <h4 className="outfit" style={{fontSize: 14, fontWeight: 700, marginBottom: 18, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.06em'}}>
+                Catalog
+              </h4>
+              <ul className="space-y-4">
+                {['All Research Peptides', 'Tissue Repair (BPC-157)', 'Metabolic Optimisation', 'Performance GHRPs', 'Peptide Stacks'].map(item => (
+                  <li key={item}><a href="/shop" style={{color: 'rgba(255,255,255,0.5)', fontSize: 13, transition: 'color 0.2s'}}>{item}</a></li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Support */}
+            <div>
+              <h4 className="outfit" style={{fontSize: 14, fontWeight: 700, marginBottom: 18, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.06em'}}>
+                Support
+              </h4>
+              <ul className="space-y-4">
+                {['Lab Protocols', 'Safety Data Sheets', 'UK Shipping Info', 'Returns Policy', 'FAQs'].map(item => (
+                  <li key={item}><a href="#" style={{color: 'rgba(255,255,255,0.5)', fontSize: 13}}>{item}</a></li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h4 className="outfit" style={{fontSize: 14, fontWeight: 700, marginBottom: 18, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.06em'}}>
+                Contact
+              </h4>
+              <ul className="space-y-5">
+                <li style={{display: 'flex', alignItems: 'flex-start', gap: 10, color: 'rgba(255,255,255,0.5)', fontSize: 13}}>
+                  <Mail size={16} color="#E63946" style={{marginTop: 2, flexShrink: 0}} /> lab@peptidesandyou.co.uk
+                </li>
+                <li style={{display: 'flex', alignItems: 'flex-start', gap: 10, color: 'rgba(255,255,255,0.5)', fontSize: 13}}>
+                  <Phone size={16} color="#E63946" style={{marginTop: 2, flexShrink: 0}} /> +44 20 7946 0123
+                </li>
+                <li style={{display: 'flex', alignItems: 'flex-start', gap: 10, color: 'rgba(255,255,255,0.5)', fontSize: 13}}>
+                  <MapPin size={16} color="#E63946" style={{marginTop: 2, flexShrink: 0}} />
+                  Precision Park Biotech Hub,<br />London, E14 9GE, United Kingdom
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Disclaimer */}
+          <div style={{
+            padding: '14px 20px', background: 'rgba(255,255,255,0.03)',
+            borderRadius: 8, border: '1px solid rgba(255,255,255,0.06)', marginBottom: 0,
+          }}>
+            <p style={{fontSize: 11, color: 'rgba(255,255,255,0.35)', lineHeight: 1.7, textAlign: 'center'}}>
+              <strong style={{color: 'rgba(255,255,255,0.5)'}}>Research Use Only.</strong> Products are sold strictly for laboratory and research purposes. Not for human consumption. By purchasing, you agree that materials will be used exclusively for in-vitro research.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="p-2.5 bg-white/5 hover:bg-white/10 transition-all rounded-lg border border-white/5"><Instagram size={18} /></a>
-              <a href="#" className="p-2.5 bg-white/5 hover:bg-white/10 transition-all rounded-lg border border-white/5"><Twitter size={18} /></a>
-              <a href="#" className="p-2.5 bg-white/5 hover:bg-white/10 transition-all rounded-lg border border-white/5"><Facebook size={18} /></a>
-            </div>
-          </div>
-
-          <div>
-            <h4 className="text-lg font-bold mb-8 text-white">Direct Catalog</h4>
-            <ul className="space-y-4 text-white/60 text-sm">
-              <li><a href="/shop" className="hover:text-primary transition-colors">All Research Materials</a></li>
-              <li><a href="/shop?cat=Recovery" className="hover:text-primary transition-colors">Tissue Repair (BPC-157)</a></li>
-              <li><a href="/shop?cat=Metabolic" className="hover:text-primary transition-colors">Metabolic Optimization</a></li>
-              <li><a href="/shop?cat=Performance" className="hover:text-primary transition-colors">High Performance GHRPs</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-lg font-bold mb-8 text-white">Research Support</h4>
-            <ul className="space-y-4 text-white/60 text-sm">
-              <li><a href="/#about" className="hover:text-primary transition-colors">Lab Protocols</a></li>
-              <li><a href="/#safety" className="hover:text-primary transition-colors">Safety Data Sheets (SDS)</a></li>
-              <li><a href="/#shipping" className="hover:text-primary transition-colors">Cold Chain Logistics</a></li>
-              <li><a href="/#faq" className="hover:text-primary transition-colors">Common Research FAQs</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-lg font-bold mb-8 text-white">Global Headquarters</h4>
-            <ul className="space-y-5 text-white/60 text-sm">
-              <li className="flex items-start gap-4"><Mail size={20} className="text-primary mt-1" /> lab@peptidesandyou.com</li>
-              <li className="flex items-start gap-4"><Phone size={20} className="text-primary mt-1" /> +44 20 7946 0123</li>
-              <li className="flex items-start gap-4"><MapPin size={20} className="text-primary mt-1" /> Precision Park Biotech Hub, <br />London, E14 9GE, UK</li>
-            </ul>
           </div>
         </div>
+      </div>
 
-        <div className="pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex items-center gap-2 text-xs font-bold text-white/40 uppercase tracking-widest">
-            <ShieldCheck size={14} className="text-primary" /> Established 2018 | Lab-Verified Integrity
+      {/* Bottom Bar */}
+      <div style={{background: '#0B0F1A', padding: '14px 0'}}>
+        <div className="container" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12}}>
+          <div style={{display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, fontWeight: 600, color: 'rgba(255,255,255,0.3)', letterSpacing: '0.04em'}}>
+            <ShieldCheck size={13} color="#E63946" /> © 2025 Peptides and You Ltd · Registered in England & Wales
           </div>
-          <div className="flex gap-8 text-xs text-white/40 font-bold uppercase tracking-widest">
-            <a href="#" className="hover:text-white transition-colors">Privacy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Supply</a>
-            <a href="#" className="hover:text-white transition-colors">Wholesale</a>
+          <div style={{display: 'flex', gap: 20, fontSize: 11, fontWeight: 600, color: 'rgba(255,255,255,0.3)'}}>
+            <a href="#" style={{color: 'inherit'}}>Privacy Policy</a>
+            <a href="#" style={{color: 'inherit'}}>Terms of Supply</a>
+            <a href="#" style={{color: 'inherit'}}>Cookie Policy</a>
           </div>
         </div>
       </div>
