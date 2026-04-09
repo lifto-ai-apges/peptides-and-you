@@ -5,7 +5,7 @@ import { MessageCircle, X, Send, Bot, CornerDownRight } from 'lucide-react';
 const ChatbotPlaceholder = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages] = useState([
-    { text: 'Hello! I am the Peptides and You research assistant. How can I help with your scientific enquiries today?', sender: 'bot' }
+    { text: 'Hello! Welcome to Peptides & You. How can I help you find the right peptide today?', sender: 'bot' }
   ]);
 
   return (
@@ -26,7 +26,7 @@ const ChatbotPlaceholder = () => {
           >
             {/* Header */}
             <div style={{
-              background: '#E63946', padding: '16px 18px',
+              background: 'linear-gradient(135deg, #D4AF37, #B8972F)', padding: '16px 18px',
               display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#fff',
             }}>
               <div style={{display: 'flex', alignItems: 'center', gap: 10}}>
@@ -34,7 +34,7 @@ const ChatbotPlaceholder = () => {
                   <Bot size={20} />
                 </div>
                 <div>
-                  <div className="outfit" style={{fontSize: 14, fontWeight: 700}}>Lab Assistant AI</div>
+                  <div className="outfit" style={{fontSize: 14, fontWeight: 700}}>Peptide Assistant</div>
                   <div style={{fontSize: 10, opacity: 0.8, fontWeight: 600, letterSpacing: '0.06em'}}>ONLINE</div>
                 </div>
               </div>
@@ -51,7 +51,7 @@ const ChatbotPlaceholder = () => {
                     maxWidth: '85%', padding: '10px 14px', borderRadius: 12,
                     fontSize: 13, lineHeight: 1.6,
                     ...(msg.sender === 'user'
-                      ? { background: '#E63946', color: '#fff', borderBottomRightRadius: 4 }
+                      ? { background: 'var(--primary)', color: '#fff', borderBottomRightRadius: 4 }
                       : { background: '#fff', color: 'var(--text-secondary)', border: '1px solid var(--border)', borderBottomLeftRadius: 4 }
                     ),
                   }}>
@@ -66,13 +66,13 @@ const ChatbotPlaceholder = () => {
 
             {/* Input */}
             <div style={{padding: 12, background: '#fff', borderTop: '1px solid var(--border)', display: 'flex', gap: 8}}>
-              <input type="text" placeholder="Ask a question..."
+              <input type="text" placeholder="Ask about our peptides..."
                 style={{
                   flex: 1, background: '#F4F4F5', border: '1px solid var(--border)', borderRadius: 8,
                   padding: '9px 12px', fontSize: 13, outline: 'none', fontFamily: 'inherit', color: 'var(--text)',
                 }} />
               <button style={{
-                background: '#E63946', width: 38, height: 38, borderRadius: 8,
+                background: 'linear-gradient(135deg, #D4AF37, #B8972F)', width: 38, height: 38, borderRadius: 8,
                 color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center',
               }}>
                 <Send size={16} />
@@ -85,8 +85,8 @@ const ChatbotPlaceholder = () => {
       <button onClick={() => setIsOpen(!isOpen)}
         style={{
           width: 52, height: 52, borderRadius: '50%',
-          background: '#E63946', color: '#fff',
-          boxShadow: '0 4px 16px rgba(230,57,70,0.35)',
+          background: 'linear-gradient(135deg, #D4AF37, #B8972F)', color: '#fff',
+          boxShadow: '0 4px 16px rgba(184,151,47,0.35)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           border: '3px solid #fff', transition: 'transform 0.2s',
         }}

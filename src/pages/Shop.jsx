@@ -28,8 +28,8 @@ const Shop = () => {
   const productListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Research Peptides Catalog",
-    "description": "Premium research peptides available for UK delivery",
+    "name": "Peptides Catalog",
+    "description": "Premium pharmaceutical-grade peptides — lab tested with COA",
     "numberOfItems": peptides.length,
     "itemListElement": peptides.map((p, i) => ({
       "@type": "ListItem",
@@ -58,14 +58,14 @@ const Shop = () => {
   return (
     <div style={{paddingTop: 180, paddingBottom: 60, background: 'var(--bg)', minHeight: '100vh'}}>
       <Helmet>
-        <title>Shop Research Peptides | 99.8% Purity | UK Next-Day Delivery | Peptides and You</title>
-        <meta name="description" content="Browse our catalog of premium research peptides including BPC-157, TB-500, Epithalon, and more. All materials are lab-verified with 99.8%+ purity. UK-based with next-day delivery." />
-        <meta name="keywords" content="research peptides UK, buy peptides, BPC-157, TB-500, GHK-Cu, peptide stacks, lab-grade peptides, 99% purity peptides" />
-        <link rel="canonical" href="https://peptidesandyou.co.uk/shop" />
-        <meta property="og:title" content="Shop Research Peptides | Peptides and You" />
-        <meta property="og:description" content="Premium lab-verified research peptides. 99.8% purity, UK next-day delivery." />
+        <title>Shop Peptides | Lab Tested | COA Included | Peptides & You</title>
+        <meta name="description" content="Browse our full catalog of premium peptides including BPC-157, TB-500, Epithalon, Retatrutide, and more. All products are lab tested with Certificate of Analysis included." />
+        <meta name="keywords" content="buy peptides, BPC-157, TB-500, GHK-Cu, Retatrutide, peptide stacks, lab tested peptides, COA peptides" />
+        <link rel="canonical" href="https://peptidesandyou.com/shop" />
+        <meta property="og:title" content="Shop Peptides | Peptides & You" />
+        <meta property="og:description" content="Premium lab-tested peptides with COA included." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://peptidesandyou.co.uk/shop" />
+        <meta property="og:url" content="https://peptidesandyou.com/shop" />
         <script type="application/ld+json">{JSON.stringify(productListSchema)}</script>
       </Helmet>
 
@@ -101,7 +101,7 @@ const Shop = () => {
           <section style={{marginBottom: 56}}>
             <h2 className="section-heading">Peptides</h2>
             <p className="section-desc">
-              Peptides are short chains of amino acids extensively studied in laboratory research for their role in various biological processes. Browse our premium selection of high-purity peptides, curated exclusively for research purposes.
+              All products are lyophilised powder vials, lab tested and supplied with Certificate of Analysis. Browse our full range of pharmaceutical-grade peptides across healing, anti-aging, weight management, cognitive, and growth hormone categories.
             </p>
             <div className="product-grid">
               {filterBySearch(peptideProducts).map(product => (
@@ -116,7 +116,7 @@ const Shop = () => {
           <section style={{marginBottom: 56}}>
             <h2 className="section-heading">Stacks</h2>
             <p className="section-desc">
-              Peptide stacks combine carefully selected compounds to facilitate advanced scientific research. These formulations explore potential interactions across various biological and cellular applications.
+              Peptide stacks combine complementary compounds in a single vial for synergistic results. Each stack is lab tested and includes Certificate of Analysis.
             </p>
             <div className="product-grid">
               {filterBySearch(stackProducts).map(product => (
@@ -134,7 +134,7 @@ const Shop = () => {
           }}>
             <Search size={40} style={{margin: '0 auto 12px', opacity: 0.15, color: 'var(--text-muted)'}} />
             <p style={{fontSize: 18, fontWeight: 700, color: 'var(--text-secondary)', marginBottom: 12}}>
-              No research materials match your criteria.
+              No products match your search.
             </p>
             <button onClick={() => { setSearchQuery(''); setActiveSection('all'); }}
               style={{

@@ -3,7 +3,7 @@ import Hero from '../components/Hero';
 import ProductCard from '../components/ProductCard';
 import { peptides } from '../data/peptides';
 import { Helmet } from 'react-helmet-async';
-import { ArrowRight, Microscope, Beaker, ShieldCheck } from 'lucide-react';
+import { ArrowRight, FlaskConical, FileCheck, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -14,27 +14,19 @@ const Home = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Peptides and You",
-    "url": "https://peptidesandyou.co.uk",
-    "logo": "https://peptidesandyou.co.uk/logo.png",
-    "description": "UK-based supplier of premium lab-verified research peptides with 99.8% purity.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Precision Park Biotech Hub",
-      "addressLocality": "London",
-      "postalCode": "E14 9GE",
-      "addressCountry": "GB"
-    },
+    "url": "https://peptidesandyou.com",
+    "logo": "https://peptidesandyou.com/logo.png",
+    "description": "Premium pharmaceutical-grade peptides. Lab tested with Certificate of Analysis included.",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+44-20-7946-0123",
       "contactType": "customer service",
-      "email": "lab@peptidesandyou.co.uk",
-      "areaServed": "GB",
+      "email": "info@peptidesandyou.com",
+      "areaServed": "PH",
       "availableLanguage": "English"
     },
     "sameAs": [
       "https://www.instagram.com/peptidesandyou",
-      "https://twitter.com/peptidesandyou"
+      "https://www.facebook.com/peptidesandyou"
     ]
   };
 
@@ -43,63 +35,63 @@ const Home = () => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Peptides and You",
-    "url": "https://peptidesandyou.co.uk",
+    "url": "https://peptidesandyou.com",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://peptidesandyou.co.uk/shop?q={search_term_string}",
+      "target": "https://peptidesandyou.com/shop?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };
 
   const features = [
     {
-      icon: Microscope,
-      title: 'Lab-Verified Purity',
-      desc: 'Every batch undergoes HPLC and mass spectrometry testing to guarantee 99%+ purity and consistency.',
+      icon: FileCheck,
+      title: 'Lab Tested & COA Included',
+      desc: 'Every product is third-party lab tested. Certificate of Analysis supplied with every batch — transparency you can verify.',
     },
     {
-      icon: Beaker,
-      title: 'Stable Synthesis',
-      desc: 'Our stabilisation protocols ensure lyophilised materials retain maximum efficacy during storage and transport.',
+      icon: FlaskConical,
+      title: 'Pharmaceutical-Grade Quality',
+      desc: 'All products are lyophilised powder vials, manufactured to pharmaceutical standards. Consistent purity across every product we sell.',
     },
     {
       icon: ShieldCheck,
-      title: 'UK-Wide Integrity',
-      desc: 'Climate-controlled shipping across the UK with secure, discreet packaging for your research materials.',
+      title: 'Trusted & Verified',
+      desc: 'Trusted by practitioners and clients across the Philippines and Southeast Asia. Secure, discreet shipping on every order.',
     },
   ];
 
   return (
     <div style={{background: 'var(--bg)'}}>
       <Helmet>
-        <title>Peptides and You | Premium Research Peptides UK | 99.8% Purity | Next-Day Delivery</title>
-        <meta name="description" content="UK's leading supplier of lab-verified research peptides. BPC-157, TB-500, GHK-Cu, Epithalon and more. 99.8% purity, COA included, same-day dispatch with next-day UK delivery." />
-        <meta name="keywords" content="research peptides UK, buy peptides UK, BPC-157 UK, TB-500, GHK-Cu, peptide supplier UK, lab-grade peptides, 99% purity peptides, next-day delivery peptides" />
-        <link rel="canonical" href="https://peptidesandyou.co.uk" />
+        <title>Peptides & You | Premium Pharmaceutical-Grade Peptides | Lab Tested | COA Included</title>
+        <meta name="description" content="Premium pharmaceutical-grade peptides. BPC-157, TB-500, GHK-Cu, Epithalon, Retatrutide and more. Lab tested with Certificate of Analysis. Fast delivery." />
+        <meta name="keywords" content="peptides, buy peptides, BPC-157, TB-500, GHK-Cu, peptide supplier, pharmaceutical grade peptides, COA peptides, lab tested peptides" />
+        <link rel="canonical" href="https://peptidesandyou.com" />
 
         {/* Open Graph */}
-        <meta property="og:title" content="Peptides and You | Premium Research Peptides UK" />
-        <meta property="og:description" content="Lab-verified research peptides. 99.8% purity, COA included, next-day UK delivery." />
+        <meta property="og:title" content="Peptides & You | Premium Pharmaceutical-Grade Peptides" />
+        <meta property="og:description" content="Lab tested peptides with COA included. BPC-157, TB-500, GHK-Cu, Retatrutide and more." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://peptidesandyou.co.uk" />
+        <meta property="og:url" content="https://peptidesandyou.com" />
         <meta property="og:site_name" content="Peptides and You" />
-        <meta property="og:locale" content="en_GB" />
+        <meta property="og:locale" content="en_PH" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Peptides and You | Premium Research Peptides UK" />
-        <meta name="twitter:description" content="Lab-verified research peptides. 99.8% purity, next-day UK delivery." />
+        <meta name="twitter:title" content="Peptides & You | Premium Pharmaceutical-Grade Peptides" />
+        <meta name="twitter:description" content="Lab tested peptides with COA included. Fast delivery." />
 
         {/* Geo Tags */}
-        <meta name="geo.region" content="GB-ENG" />
-        <meta name="geo.placename" content="London" />
-        <meta name="geo.position" content="51.5074;-0.1278" />
-        <meta name="ICBM" content="51.5074, -0.1278" />
-        <meta name="DC.title" content="Peptides and You - Research Peptides UK" />
-        <meta name="DC.creator" content="Peptides and You Ltd" />
-        <meta name="DC.subject" content="Research Peptides" />
-        <meta name="DC.language" content="en-GB" />
-        <meta name="DC.coverage" content="United Kingdom" />
+        <meta name="geo.region" content="PH-00" />
+        <meta name="geo.placename" content="Manila" />
+        <meta name="geo.position" content="14.5995;120.9842" />
+        <meta name="ICBM" content="14.5995, 120.9842" />
+        <meta name="DC.title" content="Peptides and You - Premium Peptides" />
+        <meta name="DC.creator" content="Peptides and You" />
+        <meta name="DC.subject" content="Peptides" />
+        <meta name="DC.language" content="en" />
+        <meta name="DC.coverage" content="Philippines" />
 
         {/* Structured Data */}
         <script type="application/ld+json">{JSON.stringify(orgSchema)}</script>
@@ -115,7 +107,7 @@ const Home = () => {
             <div>
               <h2 className="section-heading" style={{fontSize: 26}}>Featured Peptides</h2>
               <p style={{color: 'var(--text-secondary)', fontSize: 14, maxWidth: 450, lineHeight: 1.6}}>
-                Our most popular lab-verified compounds, trusted by researchers across the UK.
+                Our most popular lab-tested compounds, trusted by practitioners and clients.
               </p>
             </div>
             <Link to="/shop" className="btn-outline" style={{padding: '10px 22px', fontSize: 13}}>
@@ -134,9 +126,9 @@ const Home = () => {
       <section id="about" style={{padding: '64px 0', background: '#fff'}}>
         <div className="container">
           <div style={{textAlign: 'center', marginBottom: 40}}>
-            <h2 className="section-heading" style={{fontSize: 26}}>The Precision Standard</h2>
+            <h2 className="section-heading" style={{fontSize: 26}}>Why Peptides & You</h2>
             <p style={{color: 'var(--text-secondary)', fontSize: 14, maxWidth: 520, margin: '0 auto', lineHeight: 1.6}}>
-              Bridging the gap between complex biochemistry and reliable research procurement in the UK.
+              Premium quality, lab-verified purity, and transparent sourcing — everything you need to trust what you're using.
             </p>
           </div>
           <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20}}>
@@ -147,11 +139,11 @@ const Home = () => {
               }}>
                 <div style={{
                   width: 48, height: 48, borderRadius: 10,
-                  background: 'rgba(230,57,70,0.08)',
+                  background: 'var(--primary-light)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   marginBottom: 18,
                 }}>
-                  <f.icon size={24} color="#E63946" />
+                  <f.icon size={24} color="var(--primary)" />
                 </div>
                 <h3 className="outfit" style={{fontSize: 17, fontWeight: 700, marginBottom: 8, color: 'var(--text)'}}>
                   {f.title}
@@ -166,11 +158,11 @@ const Home = () => {
       </section>
 
       {/* CTA */}
-      <section style={{padding: '72px 0', background: '#111827', position: 'relative', overflow: 'hidden'}}>
+      <section style={{padding: '72px 0', background: '#1A1A2E', position: 'relative', overflow: 'hidden'}}>
         <div style={{
           position: 'absolute', top: '50%', right: '10%', transform: 'translateY(-50%)',
           width: 400, height: 400,
-          background: 'radial-gradient(circle, rgba(230,57,70,0.1), transparent 70%)',
+          background: 'radial-gradient(circle, rgba(212,175,55,0.1), transparent 70%)',
           pointerEvents: 'none',
         }} />
         <div className="container" style={{position: 'relative', zIndex: 2}}>
@@ -179,11 +171,11 @@ const Home = () => {
               fontSize: 'clamp(24px, 4vw, 42px)', fontWeight: 800,
               color: '#fff', marginBottom: 16, lineHeight: 1.2,
             }}>
-              Reliable Data Starts with{' '}
-              <span style={{color: '#E63946'}}>Precision Materials.</span>
+              Your Body Deserves{' '}
+              <span style={{color: '#D4AF37'}}>Premium Grade.</span>
             </h2>
             <p style={{fontSize: 15, color: 'rgba(255,255,255,0.55)', marginBottom: 28, lineHeight: 1.7}}>
-              Trusted by academic researchers and metabolic specialists across the United Kingdom.
+              Every product lab tested. COA included. Trusted by practitioners across Southeast Asia.
             </p>
             <Link to="/shop" className="btn-primary" style={{padding: '14px 32px', fontSize: 15}}>
               Browse the Catalog <ArrowRight size={18} />

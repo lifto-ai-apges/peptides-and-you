@@ -1,16 +1,6 @@
-# Peptides and You - Sitemap
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /admin/
 
-# Sitemaps
-Sitemap: https://peptidesandyou.co.uk/sitemap.xml
-
-# Crawl-delay
-Crawl-delay: 1
-
-# Google-specific
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 0
+Sitemap: https://peptidesandyou.com/sitemap.xml

@@ -3,14 +3,14 @@ import { useParams, Link } from 'react-router-dom';
 import { peptides } from '../data/peptides';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { ShoppingCart, ArrowLeft, CheckCircle2, ShieldCheck, FlaskConical, FileText, Star, Database } from 'lucide-react';
+import { ShoppingCart, ArrowLeft, CheckCircle2, ShieldCheck, FileText, Star, Database } from 'lucide-react';
 
 const Stars = ({ rating = 5 }) => (
   <div className="stars" style={{marginBottom: 6}}>
     {[...Array(5)].map((_, i) => (
       <Star key={i} size={15}
-        fill={i < rating ? '#E63946' : 'transparent'}
-        color={i < rating ? '#E63946' : '#D4D4D8'}
+        fill={i < rating ? '#D4AF37' : 'transparent'}
+        color={i < rating ? '#D4AF37' : '#D4D4D8'}
         strokeWidth={1.5} />
     ))}
   </div>
@@ -24,7 +24,7 @@ const ProductDetails = () => {
 
   if (!product) return (
     <div style={{paddingTop: 240, textAlign: 'center', fontSize: 20, fontWeight: 700, color: 'var(--text-secondary)', minHeight: '60vh'}}>
-      Material not found in catalog.
+      Product not found.
     </div>
   );
 
@@ -41,13 +41,8 @@ const ProductDetails = () => {
       "priceCurrency": "GBP",
       "price": product.price.toFixed(2),
       "availability": "https://schema.org/InStock",
-      "url": `https://peptidesandyou.co.uk/product/${product.id}`,
+      "url": `https://peptidesandyou.com/product/${product.id}`,
       "seller": { "@type": "Organization", "name": "Peptides and You" },
-      "shippingDetails": {
-        "@type": "OfferShippingDetails",
-        "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "GB" },
-        "deliveryTime": { "@type": "ShippingDeliveryTime", "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 1, "unitCode": "DAY" }, "transitTime": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 2, "unitCode": "DAY" } }
-      }
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -60,18 +55,18 @@ const ProductDetails = () => {
   return (
     <div style={{paddingTop: 180, paddingBottom: 60, background: 'var(--bg)', minHeight: '100vh'}}>
       <Helmet>
-        <title>{product.name} | Lab-Verified Research Peptide | Buy Online UK | Peptides and You</title>
-        <meta name="description" content={`${product.shortDescription} 99.8%+ purity, COA included. UK next-day delivery available. Research use only.`} />
-        <meta name="keywords" content={product.seoKeywords.join(', ') + ', buy peptides UK, research peptides UK'} />
-        <link rel="canonical" href={`https://peptidesandyou.co.uk/product/${product.id}`} />
-        <meta property="og:title" content={`${product.name} | Peptides and You`} />
+        <title>{product.name} | Lab Tested Peptide | Buy Online | Peptides & You</title>
+        <meta name="description" content={`${product.shortDescription} Lab tested with COA included. Fast delivery.`} />
+        <meta name="keywords" content={product.seoKeywords.join(', ') + ', buy peptides, lab tested peptides'} />
+        <link rel="canonical" href={`https://peptidesandyou.com/product/${product.id}`} />
+        <meta property="og:title" content={`${product.name} | Peptides & You`} />
         <meta property="og:description" content={product.shortDescription} />
         <meta property="og:type" content="product" />
-        <meta property="og:url" content={`https://peptidesandyou.co.uk/product/${product.id}`} />
+        <meta property="og:url" content={`https://peptidesandyou.com/product/${product.id}`} />
         <meta property="product:price:amount" content={product.price.toFixed(2)} />
         <meta property="product:price:currency" content="GBP" />
-        <meta name="geo.region" content="GB-ENG" />
-        <meta name="geo.placename" content="London" />
+        <meta name="geo.region" content="PH-00" />
+        <meta name="geo.placename" content="Manila" />
         <script type="application/ld+json">{JSON.stringify(productSchema)}</script>
       </Helmet>
 
@@ -90,19 +85,18 @@ const ProductDetails = () => {
               background: '#fff', aspectRatio: '1', borderRadius: 16,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               border: '1px solid var(--border)', position: 'relative',
+              overflow: 'hidden',
             }}>
-              <div style={{
-                width: 140, height: 140, borderRadius: '50%',
-                background: '#F0F0F2', display: 'flex', alignItems: 'center', justifyContent: 'center',
-              }}>
-                <FlaskConical size={56} color="#E63946" strokeWidth={1.2} style={{opacity: 0.3}} />
-              </div>
+              <img src="/peptide-vial.png" alt={`${product.name} peptide vial`} style={{
+                width: '70%', height: '70%', objectFit: 'contain',
+              }} />
 
               {product.size && (
                 <div style={{
                   position: 'absolute', top: 16, right: 16,
-                  background: '#F0F0F2', padding: '5px 12px', borderRadius: 6,
-                  fontSize: 12, fontWeight: 700, color: 'var(--text-secondary)',
+                  background: 'var(--primary-light)', padding: '5px 12px', borderRadius: 6,
+                  fontSize: 12, fontWeight: 700, color: 'var(--primary)',
+                  border: '1px solid rgba(184,151,47,0.15)',
                 }}>
                   {product.size}
                 </div>
@@ -118,8 +112,8 @@ const ProductDetails = () => {
                   <ShieldCheck size={17} color="#16A34A" />
                 </div>
                 <div>
-                  <p style={{fontSize: 9, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--text-muted)'}}>Purity</p>
-                  <p style={{fontSize: 13, fontWeight: 700, color: 'var(--text)'}}>99.8%+</p>
+                  <p style={{fontSize: 9, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--text-muted)'}}>Status</p>
+                  <p style={{fontSize: 13, fontWeight: 700, color: 'var(--text)'}}>Lab Tested</p>
                 </div>
               </div>
             </div>
@@ -130,9 +124,9 @@ const ProductDetails = () => {
             {/* Category */}
             <span style={{
               display: 'inline-block', padding: '4px 12px', borderRadius: 6,
-              background: 'rgba(230,57,70,0.08)', border: '1px solid rgba(230,57,70,0.12)',
+              background: 'var(--primary-light)', border: '1px solid rgba(184,151,47,0.15)',
               fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em',
-              color: '#E63946', marginBottom: 12,
+              color: 'var(--primary)', marginBottom: 12,
             }}>
               {product.category}
             </span>
@@ -144,7 +138,7 @@ const ProductDetails = () => {
             <Stars rating={product.rating} />
 
             <div style={{display: 'flex', alignItems: 'center', gap: 16, margin: '12px 0 24px'}}>
-              <p className="outfit" style={{fontSize: 28, fontWeight: 800, color: '#E63946'}}>
+              <p className="outfit" style={{fontSize: 28, fontWeight: 800, color: 'var(--primary)'}}>
                 {product.originalPrice && (
                   <span style={{fontSize: 18, color: 'var(--text-light)', textDecoration: 'line-through', marginRight: 10, fontWeight: 500}}>
                     £{product.originalPrice.toFixed(2)}
@@ -164,11 +158,11 @@ const ProductDetails = () => {
 
             {/* Benefits */}
             <div style={{background: '#fff', padding: 24, borderRadius: 12, border: '1px solid var(--border)', marginBottom: 24}}>
-              <h3 className="outfit" style={{fontSize: 15, fontWeight: 700, marginBottom: 14, color: 'var(--text)'}}>Research Indicators</h3>
+              <h3 className="outfit" style={{fontSize: 15, fontWeight: 700, marginBottom: 14, color: 'var(--text)'}}>Key Benefits</h3>
               <ul style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12, listStyle: 'none', padding: 0}}>
                 {product.benefits.map((benefit, i) => (
                   <li key={i} style={{display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 13, fontWeight: 500, color: 'var(--text-secondary)'}}>
-                    <CheckCircle2 size={15} color="#E63946" style={{marginTop: 2, flexShrink: 0}} />
+                    <CheckCircle2 size={15} color="var(--primary)" style={{marginTop: 2, flexShrink: 0}} />
                     {benefit}
                   </li>
                 ))}
@@ -181,16 +175,16 @@ const ProductDetails = () => {
                 <ShoppingCart size={18} /> Add to Basket
               </button>
               <button className="btn-outline" style={{padding: '12px 28px', fontSize: 14, width: '100%'}}>
-                <FileText size={18} /> Download COA / SDS
+                <FileText size={18} /> Download COA
               </button>
             </div>
 
             {/* Quick Specs */}
             <div style={{display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12}}>
               {[
-                { label: 'Purity', value: '99.8%+' },
                 { label: 'Format', value: 'Lyophilised' },
-                { label: 'Protocol', value: 'ISO-9001' },
+                { label: 'Lab Tested', value: '✓ Verified' },
+                { label: 'COA', value: 'Included' },
               ].map(spec => (
                 <div key={spec.label} style={{
                   background: '#fff', border: '1px solid var(--border)',
@@ -211,25 +205,25 @@ const ProductDetails = () => {
           <div style={{display: 'grid', gridTemplateColumns: '280px 1fr', gap: 40}}>
             <div>
               <div style={{
-                width: 44, height: 44, borderRadius: 10, background: 'rgba(230,57,70,0.08)',
+                width: 44, height: 44, borderRadius: 10, background: 'var(--primary-light)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14,
               }}>
-                <Database size={22} color="#E63946" />
+                <Database size={22} color="var(--primary)" />
               </div>
-              <h2 className="outfit" style={{fontSize: 22, fontWeight: 800, marginBottom: 8, color: 'var(--text)'}}>Scientific Analysis</h2>
+              <h2 className="outfit" style={{fontSize: 22, fontWeight: 800, marginBottom: 8, color: 'var(--text)'}}>About This Peptide</h2>
               <p style={{fontSize: 13, color: 'var(--text-muted)', fontWeight: 500}}>
-                Biochemical background for <strong style={{color: 'var(--text-secondary)'}}>{product.name}</strong> research.
+                Detailed information about <strong style={{color: 'var(--text-secondary)'}}>{product.name}</strong>.
               </p>
             </div>
             <div style={{fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.8}}>
               <p style={{marginBottom: 16}}>
-                The molecular architecture of <strong>{product.name}</strong> is synthesised via automated solid-phase peptide synthesis (SPPS),
-                minimising human intervention and maximising batch consistency. Analytical evaluation focuses on&nbsp;
-                <strong>{product.seoKeywords[1]}</strong> and secondary structural stability.
+                <strong>{product.name}</strong> is supplied as a lyophilised powder vial and is lab tested to verify identity and purity.
+                Every batch comes with a Certificate of Analysis (COA) so you can verify exactly what you're getting.
               </p>
               <p>
-                Researchers investigating <strong>{product.seoKeywords[2]}</strong> will find this material maintains optimal binding affinity.
-                Our facility implements strict cold-chain management from synthesis to storage, preventing degradation of sensitive amino acid sequences.
+                This product falls under the <strong>{product.category}</strong> category.
+                For detailed usage information, dosing protocols, and stacking recommendations, please consult with a qualified healthcare professional.
+                All products are for research and personal use only.
               </p>
             </div>
           </div>

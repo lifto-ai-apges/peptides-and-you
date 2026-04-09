@@ -2,221 +2,230 @@ export const peptides = [
   {
     id: 'bpc-157',
     name: 'BPC-157',
-    shortDescription: 'Body Protective Compound for superior tissue repair and gut health.',
-    description: 'BPC-157 is a pentadecapeptide composed of 15 amino acids, derived from human gastric juice. It is renowned for its exceptional regenerative properties, particularly in healing tendons, ligaments, and muscle tissue.',
+    shortDescription: "Your body's built-in repair switch — turned up to maximum.",
+    description: 'BPC-157 is a naturally occurring peptide found in gastric juice that has become one of the most talked-about recovery compounds in sports medicine and regenerative health. It accelerates healing in tendons, ligaments, muscles, and the gut lining — faster than anything else in its class. Torn rotator cuff. Leaky gut. Chronic joint pain. BPC-157 targets all of it at the source, reducing inflammation and rebuilding tissue with precision.',
     benefits: [
-      'Accelerates wound and soft tissue healing',
-      'Supports gastrointestinal health and gut lining repair',
-      'Reduces inflammation and joint pain',
-      'Promotes angiogenesis (new blood vessel formation)',
-      'Neuroprotective properties'
+      'Accelerates tendon, ligament, and muscle healing',
+      'Repairs and protects the gut lining',
+      'Reduces chronic inflammation and joint pain',
+      'Promotes angiogenesis and tissue regeneration',
+      'Fastest-acting recovery compound in its class'
     ],
-    category: 'Recovery',
+    category: 'Healing & Recovery',
     type: 'peptide',
     size: '5MG',
     rating: 5,
     price: 49.99,
-    seoKeywords: ['BPC-157', 'tissue repair peptide', 'ligament healing', 'gut health peptide']
+    seoKeywords: ['BPC-157', 'tissue repair peptide', 'gut healing peptide', 'recovery compound']
   },
   {
     id: 'tb-500',
     name: 'TB-500',
-    shortDescription: 'Synthetic Thymosin Beta-4 for systemic cellular regeneration.',
-    description: 'TB-500 is a synthetic version of the naturally occurring Thymosin Beta-4. It acts systemically to promote cellular migration and tissue repair throughout the entire body.',
+    shortDescription: 'Systemic tissue repair — works everywhere damage exists.',
+    description: 'Where BPC-157 works locally, TB-500 works everywhere. A fragment of Thymosin Beta-4 — a protein your body already produces to coordinate healing — TB-500 travels systemically through the bloodstream, mobilising repair cells to wherever damage exists. It reduces scar tissue, improves flexibility in injured tissue, and dramatically shortens recovery timelines. For athletes, post-surgical patients, or anyone dealing with chronic injury, TB-500 is the systemic complement that makes everything else work faster.',
     benefits: [
-      'Enhances muscle, tendon, and ligament repair',
-      'Strong anti-inflammatory effects',
-      'Improves flexibility and joint mobility',
-      'Promotes hair growth and skin health',
-      'Faster recovery from athletic injuries'
+      'Systemic healing through the bloodstream',
+      'Reduces scar tissue formation',
+      'Improves flexibility in injured tissue',
+      'Dramatically shortens recovery timelines',
+      'Ideal for chronic and post-surgical injuries'
     ],
-    category: 'Recovery',
+    category: 'Healing & Recovery',
     type: 'peptide',
     size: '5MG',
     rating: 5,
     price: 54.99,
-    seoKeywords: ['TB-500', 'Thymosin Beta-4', 'systemic recovery', 'muscle repair']
+    seoKeywords: ['TB-500', 'Thymosin Beta-4', 'systemic recovery', 'scar tissue reduction']
   },
   {
     id: 'wolverine-stack',
     name: 'Wolverine Stack',
-    shortDescription: 'The ultimate recovery duo: BPC-157 + TB-500.',
-    description: 'The Wolverine Stack combines the localized healing power of BPC-157 with the systemic regenerative effects of TB-500, creating a synergistic profile for elite-level recovery.',
+    shortDescription: 'BPC-157 + TB-500 in a single vial — local and systemic repair working simultaneously.',
+    description: 'Named for a reason. The Wolverine Stack combines BPC-157 and TB-500 in a single vial — local and systemic tissue repair working simultaneously. BPC-157 attacks the injury site directly; TB-500 mobilises the repair response body-wide. Together they cut recovery timelines in half. This is the stack athletes, weekend warriors, and post-surgical patients reach for first — and the one that consistently outperforms everything else in the recovery category.',
     benefits: [
-      'Maximum synergy for rapid injury recovery',
-      'Combines localized and systemic healing',
-      'Superior inflammation management',
-      'Optimized for high-performance athletes'
+      'Combines local and systemic healing in one vial',
+      'Cuts recovery timelines in half',
+      'BPC-157 targets the injury site directly',
+      'TB-500 mobilises body-wide repair response',
+      'The #1 stack in the recovery category'
     ],
-    category: 'Stacks',
+    category: 'Recovery Stack',
     type: 'stack',
     size: 'Combo',
     rating: 5,
     price: 94.99,
     originalPrice: 104.98,
-    seoKeywords: ['Wolverine Stack', 'BPC-157 TB-500 stack', 'ultimate recovery peptide']
+    seoKeywords: ['Wolverine Stack', 'BPC-157 TB-500 combo', 'ultimate recovery stack', 'peptide stack']
   },
   {
     id: 'ghk-cu',
     name: 'GHK-Cu',
-    shortDescription: 'The "Glow Peptide" for skin rejuvenation and hair growth.',
-    description: 'GHK-Cu is a naturally occurring copper-binding tripeptide found in human plasma. It is a powerhouse for anti-aging, skin remodeling, and hair follicle stimulation.',
+    shortDescription: 'The peptide your skin stops making enough of after 60.',
+    description: 'GHK-Cu is a copper-binding tripeptide naturally present in your blood — but its levels drop sharply with age, and the skin shows it. Wrinkles deepen. Wounds heal slower. Hair thins. GHK-Cu reverses this by activating genes responsible for collagen and elastin production, accelerating wound closure, and reducing oxidative damage. Used in dermatology, anti-aging protocols, and hair restoration — it\'s one of the most versatile peptides in the catalogue.',
     benefits: [
       'Stimulates collagen and elastin production',
-      'Visible reduction in fine lines and wrinkles',
-      'Improves skin firmness and clarity',
-      'Promotes hair thickness and scalp health',
-      'Potent antioxidant and anti-inflammatory'
+      'Accelerates wound closure and skin repair',
+      'Reduces oxidative damage and fine lines',
+      'Promotes hair thickness and restoration',
+      'Most versatile anti-aging peptide available'
     ],
-    category: 'Beauty',
+    category: 'Anti-Aging & Skin',
     type: 'peptide',
     size: '100MG',
     rating: 5,
     price: 44.99,
-    seoKeywords: ['GHK-Cu', 'copper peptide', 'skin rejuvenation', 'hair growth peptide']
+    seoKeywords: ['GHK-Cu', 'copper peptide', 'anti-aging skin peptide', 'hair restoration peptide']
   },
   {
     id: 'retatrutide',
     name: 'Retatrutide',
-    shortDescription: 'Next-generation triple hormone agonist for metabolic health.',
-    description: 'Retatrutide is a cutting-edge triple agonist (GLP-1, GIP, and Glucagon receptors) designed for significant metabolic optimization and weight management support.',
+    shortDescription: 'The next generation of weight loss — beyond Ozempic, beyond Tirzepatide.',
+    description: 'Retatrutide is a triple receptor agonist, the first of its kind to simultaneously activate GLP-1, GIP, and glucagon receptors. Early clinical trials have shown up to 24% body weight reduction — figures that exceed most bariatric surgical outcomes. It suppresses appetite, accelerates fat burning, regulates blood sugar, and resets metabolic function at a hormonal level. This is where the science is heading, and we carry it.',
     benefits: [
-      'Powerful support for weight management',
-      'Optimizes metabolic rate',
-      'Helps regulate blood sugar levels',
-      'Triple-action hormone receptor targeting'
+      'Triple receptor agonist (GLP-1, GIP, Glucagon)',
+      'Up to 24% body weight reduction in trials',
+      'Suppresses appetite and accelerates fat burning',
+      'Regulates blood sugar at hormonal level',
+      'Exceeds most bariatric surgical outcomes'
     ],
-    category: 'Metabolic',
+    category: 'Weight Management',
     type: 'peptide',
     size: '5MG',
     rating: 5,
     price: 129.99,
-    seoKeywords: ['Retatrutide', 'weight loss peptide', 'metabolic health', 'GLP-1 GIP Glucagon']
+    seoKeywords: ['Retatrutide', 'weight loss peptide', 'triple agonist', 'GLP-1 GIP glucagon']
   },
   {
     id: 'epithalon',
     name: 'Epithalon',
-    shortDescription: 'The longevity peptide for telomere lengthening and sleep quality.',
-    description: 'Epithalon is a synthetic tetrapeptide that mimics a pineal gland hormone. It is primarily studied for its potential to increase telomerase activity and promote longevity.',
+    shortDescription: 'The closest thing science has found to a biological clock reset.',
+    description: 'Epithalon is a synthetic tetrapeptide that activates telomerase — the enzyme responsible for maintaining the protective caps on your DNA strands. As those caps (telomeres) shorten, cells age and die. Epithalon slows that process. Developed by Russian scientist Prof. Vladimir Khavinson, it has been studied for decades in anti-aging and longevity research, with findings pointing to improved sleep quality, stronger immune function, and extended cellular lifespan.',
     benefits: [
-      'Supports telomere maintenance and cellular longevity',
-      'Regulates melatonin and improves sleep quality',
-      'Potent antioxidant and anti-aging properties',
-      'Enhances mitochondrial function'
+      'Activates telomerase for DNA protection',
+      'Slows cellular aging by maintaining telomeres',
+      'Improves sleep quality and immune function',
+      'Decades of longevity research backing',
+      'Extended cellular lifespan potential'
     ],
-    category: 'Longevity',
+    category: 'Longevity & Anti-Aging',
     type: 'peptide',
     size: '10MG',
     rating: 5,
     price: 59.99,
-    seoKeywords: ['Epithalon', 'longevity peptide', 'telomere lengthening', 'anti-aging']
+    seoKeywords: ['Epithalon', 'telomere peptide', 'longevity peptide', 'anti-aging telomerase']
   },
   {
     id: 'aod-9604',
     name: 'AOD-9604',
-    shortDescription: 'Advanced fat-burning peptide fragment without metabolic interference.',
-    description: 'AOD-9604 is a modified fragment of human growth hormone (176-191) specifically designed to stimulate fat metabolism without affecting blood sugar or IGF-1 levels.',
+    shortDescription: 'All the fat-burning properties of growth hormone — none of the hormonal baggage.',
+    description: "AOD-9604 is an isolated fragment of human growth hormone, engineered specifically to trigger lipolysis (the breakdown of fat cells) and block lipogenesis (the creation of new ones). It doesn't raise IGF-1 or affect blood sugar, which makes it one of the safest body composition tools available. Particularly effective on stubborn visceral and abdominal fat. Also under investigation for cartilage repair and joint health.",
     benefits: [
-      'Stimulates lipolysis (fat breakdown)',
-      'Inhibits lipogenesis (fat storage)',
-      'Supports muscle and cartilage repair',
-      'Highly targeted fat-burning mechanism'
+      'Triggers lipolysis — breaks down fat cells',
+      'Blocks lipogenesis — prevents new fat creation',
+      'No impact on IGF-1 or blood sugar',
+      'Targets stubborn visceral and abdominal fat',
+      'Under investigation for cartilage repair'
     ],
-    category: 'Metabolic',
+    category: 'Fat Loss & Metabolic',
     type: 'peptide',
     size: '5MG',
     rating: 5,
     price: 64.99,
-    seoKeywords: ['AOD-9604', 'fat loss peptide', 'growth hormone fragment', 'lipolysis']
+    seoKeywords: ['AOD-9604', 'fat loss peptide', 'growth hormone fragment', 'body composition']
   },
   {
     id: 'semax',
     name: 'Semax',
-    shortDescription: 'Nootropic peptide for cognitive enhancement and focus.',
-    description: 'Semax is a synthetic peptide derived from adrenocorticotropic hormone (ACTH). It is a powerful nootropic used to enhance mental performance and brain health.',
+    shortDescription: 'Brain performance, backed by decades of clinical use.',
+    description: 'Semax is a synthetic derivative of ACTH — a hormone your brain produces under stress — and it has been prescribed in Russian hospitals since the 1990s for stroke recovery, cognitive decline, and neuroprotection. It raises BDNF (the brain\'s growth factor), sharpens focus, improves memory retention, and protects neurons from damage. For anyone looking to operate at a higher cognitive level — or protect the brain they already have — Semax is the benchmark.',
     benefits: [
-      'Enhances focus, learning, and memory',
-      'Increases BDNF (Brain-Derived Neurotrophic Factor)',
-      'Neuroprotective against oxidative stress',
-      'Reduces mental fatigue'
+      'Raises BDNF — the brain\'s growth factor',
+      'Sharpens focus and improves memory',
+      'Protects neurons from oxidative damage',
+      'Decades of clinical use in hospitals',
+      'Benchmark nootropic for cognitive performance'
     ],
-    category: 'Nootropic',
+    category: 'Cognitive & Neuro',
     type: 'peptide',
     size: '5MG',
     rating: 5,
     price: 49.99,
-    seoKeywords: ['Semax', 'nootropic peptide', 'cognitive enhancement', 'focus booster']
+    seoKeywords: ['Semax', 'nootropic peptide', 'BDNF booster', 'cognitive enhancement']
   },
   {
     id: 'selank',
     name: 'Selank',
-    shortDescription: 'Anxiolytic peptide for stress relief and emotional balance.',
-    description: 'Selank is a synthetic analog of the immunomodulatory peptide tuftsin. It provides significant anti-anxiety benefits without the sedative side effects of traditional medications.',
+    shortDescription: 'Calm, focused, and sharp — without sedation or dependency.',
+    description: 'Selank is a synthetic analogue of tuftsin, an immune peptide, and it works directly on GABA and serotonin pathways to reduce anxiety and stabilise mood without dulling cognition. In fact, it enhances it. Memory, learning speed, and mental clarity all improve. Stacked with Semax, it delivers what most people are actually looking for: clear-headed calm under pressure, day after day, with no withdrawal.',
     benefits: [
-      'Reduces anxiety and emotional stress',
-      'Improves mental clarity and focus',
-      'Enhances mood stability',
-      'No sedative or cognitive-impairing effects'
+      'Reduces anxiety via GABA and serotonin pathways',
+      'Stabilises mood without dulling cognition',
+      'Enhances memory and learning speed',
+      'No sedation, dependency, or withdrawal',
+      'Synergistic when stacked with Semax'
     ],
-    category: 'Nootropic',
+    category: 'Cognitive & Mood',
     type: 'peptide',
     size: '5MG',
     rating: 5,
     price: 49.99,
-    seoKeywords: ['Selank', 'anxiety peptide', 'stress relief', 'emotional balance']
+    seoKeywords: ['Selank', 'anxiety peptide', 'mood stabiliser', 'GABA serotonin peptide']
   },
   {
     id: 'cjc-1295',
     name: 'CJC-1295',
-    shortDescription: 'GHRH analog for sustained growth hormone release.',
-    description: 'CJC-1295 is a synthetic GHRH analog that stimulates the pituitary gland to release growth hormone, supporting lean muscle mass and anti-aging.',
+    shortDescription: 'A long-acting signal to your pituitary gland: make more growth hormone.',
+    description: 'CJC-1295 is a GHRH analogue that triggers sustained, natural GH release — not a spike and crash, but a steady, physiological increase that mirrors how your body worked in its prime. The result is improved body composition, better sleep quality, faster recovery from training, and meaningful reductions in body fat over time. It does its best work stacked with Ipamorelin, and that combination is one of the most prescribed protocols in anti-aging medicine.',
     benefits: [
-      'Promotes lean muscle growth',
-      'Increases fat metabolism',
-      'Improves protein synthesis',
-      'Enhances cellular repair'
+      'Triggers sustained, natural growth hormone release',
+      'Improved body composition and fat reduction',
+      'Better sleep quality and faster recovery',
+      'Steady physiological GH increase',
+      'Best results when stacked with Ipamorelin'
     ],
-    category: 'Performance',
+    category: 'Growth Hormone',
     type: 'peptide',
     size: '5MG',
     rating: 5,
     price: 59.99,
-    seoKeywords: ['CJC-1295', 'GHRH analog', 'muscle growth peptide', 'anti-aging']
+    seoKeywords: ['CJC-1295', 'GHRH analogue', 'growth hormone release', 'anti-aging GH']
   },
   {
     id: 'ipamorelin',
     name: 'Ipamorelin',
-    shortDescription: 'Selective GHRP for natural growth hormone stimulation.',
-    description: 'Ipamorelin is a highly selective growth hormone secretagogue that mimics ghrelin to trigger a natural pulse of growth hormone without increasing hunger or cortisol.',
+    shortDescription: 'The cleanest growth hormone secretagogue available.',
+    description: "Ipamorelin activates the ghrelin receptor to stimulate GH release — but unlike older GHRPs, it does this without triggering cortisol, prolactin, or hunger spikes. What you get is pure, selective GH release. Better sleep. More lean muscle. Less fat. Faster recovery. When combined with CJC-1295, the two peptides amplify each other, producing 3–5x the GH output of either alone. It's the stack of choice for anyone serious about body composition and recovery.",
     benefits: [
-      'Stimulates natural growth hormone production',
-      'Minimal side effects (no hunger/cortisol spikes)',
-      'Supports fat loss and muscle recovery',
-      'Improves sleep and energy levels'
+      'Pure, selective growth hormone release',
+      'No cortisol, prolactin, or hunger spikes',
+      'Better sleep, lean muscle, less fat',
+      'Produces 3–5x GH output when stacked with CJC-1295',
+      'Cleanest GH secretagogue on the market'
     ],
-    category: 'Performance',
+    category: 'Growth Hormone',
     type: 'peptide',
     size: '5MG',
     rating: 5,
     price: 54.99,
-    seoKeywords: ['Ipamorelin', 'GHRP', 'growth hormone secretagogue', 'natural GH support']
+    seoKeywords: ['Ipamorelin', 'growth hormone secretagogue', 'clean GH release', 'CJC-1295 stack']
   },
   {
     id: 'hgh',
-    name: 'HGH Fragment 176-191',
-    shortDescription: 'Growth Hormone fragment for comprehensive physical optimization.',
-    description: 'HGH Fragment 176-191 is a modified fragment of amino acids 176-191 of the human growth hormone polypeptide. It is essential for fat metabolism and maintaining lean body composition.',
+    name: 'HGH (rHGH)',
+    shortDescription: 'The original. Recombinant Human Growth Hormone — the gold standard.',
+    description: "The original. Recombinant Human Growth Hormone is the gold standard against which every GH-related peptide is measured. It drives cell regeneration, builds lean muscle, accelerates fat metabolism, strengthens bone density, and supports the body's ability to recover from virtually everything. GH declines sharply after your 30s — supplementing it directly is the most direct way to reverse that decline. Our rHGH is pharmaceutical-grade lyophilised powder, certified by Certificate of Analysis.",
     benefits: [
-      'Enhances tissue and bone regeneration',
-      'Optimizes body composition and metabolism',
-      'Improves energy levels and vitality',
-      'Supports comprehensive physical recovery'
+      'The gold standard in growth hormone therapy',
+      'Drives cell regeneration and lean muscle',
+      'Accelerates fat metabolism and recovery',
+      'Strengthens bone density',
+      'Pharmaceutical-grade lyophilised powder with COA'
     ],
-    category: 'Performance',
+    category: 'Hormonal & Performance',
     type: 'peptide',
-    size: '5MG',
+    size: '10IU',
     rating: 5,
     price: 199.99,
-    seoKeywords: ['HGH', 'Human Growth Hormone', 'body optimization', 'regeneration']
+    seoKeywords: ['HGH', 'recombinant growth hormone', 'rHGH', 'pharmaceutical grade HGH']
   }
 ];

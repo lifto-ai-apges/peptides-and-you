@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Search, ShieldCheck, Truck, FlaskConical, User, ShoppingCart, CheckCircle } from 'lucide-react';
+import { Menu, X, Search, ShieldCheck, Truck, FlaskConical, User, ShoppingCart, CheckCircle, FileCheck } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,9 +16,9 @@ const Navbar = () => {
   const navLinks = [
     { name: 'HOME', path: '/' },
     { name: 'ABOUT', path: '/#about' },
-    { name: '3RD PARTY TESTING', path: '/#testing' },
+    { name: 'LAB TESTED', path: '/#testing' },
     { name: 'SHOP', path: '/shop', highlight: true },
-    { name: 'RESEARCH', path: '/#research' },
+    { name: 'CONTACT', path: '/#contact' },
   ];
 
   return (
@@ -26,23 +26,23 @@ const Navbar = () => {
       {/* Announcement Bar */}
       <div className="announcement-bar">
         <span><ShieldCheck size={13} style={{verticalAlign: '-2px'}} /> Secure & discreet shipping</span>
-        <span><CheckCircle size={13} style={{verticalAlign: '-2px'}} /> Third-Party Tested & Verified Pure</span>
-        <span><Truck size={13} style={{verticalAlign: '-2px'}} /> Same-day shipping</span>
+        <span><FileCheck size={13} style={{verticalAlign: '-2px'}} /> Lab Tested · COA Included</span>
+        <span><Truck size={13} style={{verticalAlign: '-2px'}} /> Fast delivery</span>
       </div>
 
       {/* Trust Bar */}
       <div className="trust-bar">
         <div className="trust-item">
-          <ShieldCheck size={14} color="var(--primary)" />
-          <span>ISO Certified</span>
+          <FileCheck size={14} color="var(--primary)" />
+          <span>Certificate of Analysis</span>
         </div>
         <div className="trust-item">
           <CheckCircle size={14} color="#16A34A" />
-          <span>99.8% Purity Guaranteed</span>
+          <span>Lab Tested & Verified</span>
         </div>
         <div className="trust-item">
           <Truck size={14} color="var(--primary)" />
-          <span>UK Next-Day Delivery</span>
+          <span>PH & International Delivery</span>
         </div>
       </div>
 
@@ -57,13 +57,13 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" style={{display: 'flex', alignItems: 'center', gap: 8}}>
             <div style={{
-              width: 32, height: 32, background: 'var(--primary)', borderRadius: 7,
+              width: 32, height: 32, background: 'var(--gold-gradient)', borderRadius: 7,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
             }}>
               <FlaskConical size={17} color="#fff" />
             </div>
             <span className="outfit" style={{fontSize: 17, fontWeight: 800, color: 'var(--text)', letterSpacing: '-0.02em'}}>
-              Peptides<span style={{color: 'var(--primary)', fontStyle: 'italic'}}>andYou</span>
+              Peptides<span style={{color: 'var(--primary)', fontStyle: 'italic'}}>&You</span>
             </span>
           </Link>
 
@@ -92,7 +92,7 @@ const Navbar = () => {
               <Search size={14} style={{position: 'absolute', left: 10, top: '50%', transform: 'translateY(-50%)', color: 'var(--text-light)'}} />
             </div>
             <button style={{
-              background: 'var(--primary)', color: '#fff', padding: '8px 16px',
+              background: 'var(--gold-gradient)', color: '#fff', padding: '8px 16px',
               borderRadius: 7, fontWeight: 700, fontSize: 12,
             }}>Search</button>
             <User size={20} style={{color: 'var(--text-secondary)', cursor: 'pointer'}} />
