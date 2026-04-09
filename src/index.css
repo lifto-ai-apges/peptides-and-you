@@ -200,14 +200,14 @@ img { max-width: 100%; display: block; }
 
 /* ===== Category Tabs ===== */
 .cat-tabs {
-  display: flex; justify-content: center; gap: 6px;
-  padding: 12px 20px; background: #fff; border-radius: 10px;
+  display: flex; justify-content: center; gap: 6px; flex-wrap: wrap;
+  padding: 12px 16px; background: #fff; border-radius: 10px;
   margin-bottom: 24px; box-shadow: var(--shadow-xs); border: 1px solid var(--border-light);
 }
 .cat-tab {
-  padding: 9px 24px; border-radius: 8px; font-size: 13px; font-weight: 600;
+  padding: 8px 18px; border-radius: 8px; font-size: 12px; font-weight: 600;
   color: var(--text-muted); background: transparent; transition: all 0.2s;
-  cursor: pointer;
+  cursor: pointer; white-space: nowrap;
 }
 .cat-tab:hover { color: var(--primary); background: var(--primary-light); }
 .cat-tab.active { background: var(--gold-gradient); color: #fff; }

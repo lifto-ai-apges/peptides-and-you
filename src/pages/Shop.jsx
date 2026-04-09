@@ -5,24 +5,22 @@ import ProductCard from '../components/ProductCard';
 import { Search } from 'lucide-react';
 
 const Shop = () => {
-  const [activeSection, setActiveSection] = useState('all');
+  const [activeCategory, setActiveCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
-  const peptideProducts = peptides.filter(p => p.type === 'peptide');
-  const stackProducts = peptides.filter(p => p.type === 'stack');
+  // Build unique categories from the data
+  const categories = ['All', ...Array.from(new Set(peptides.map(p => p.category)))];
 
-  const filterBySearch = (items) => {
-    if (!searchQuery) return items;
-    return items.filter(p =>
+  const filteredProducts = peptides.filter(p => {
+    const matchesCategory = activeCategory === 'All' || p.category === activeCategory;
+    const matchesSearch = !searchQuery ||
       p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      p.shortDescription.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-  };
-
-  const showPeptides = activeSection === 'all' || activeSection === 'peptides';
-  const showStacks = activeSection === 'all' || activeSection === 'stacks';
+      p.shortDescription.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.category.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
 
   // JSON-LD structured data for product listing
   const productListSchema = {
@@ -71,16 +69,12 @@ const Shop = () => {
 
       <div className="container">
         {/* Category Tabs */}
-        <div className="cat-tabs">
-          {[
-            { key: 'all', label: 'All Products' },
-            { key: 'peptides', label: 'Peptides' },
-            { key: 'stacks', label: 'Stacks' },
-          ].map(t => (
-            <button key={t.key}
-              className={`cat-tab ${activeSection === t.key ? 'active' : ''}`}
-              onClick={() => setActiveSection(t.key)}>
-              {t.label}
+        <div className="cat-tabs" style={{flexWrap: 'wrap'}}>
+          {categories.map(cat => (
+            <button key={cat}
+              className={`cat-tab ${activeCategory === cat ? 'active' : ''}`}
+              onClick={() => setActiveCategory(cat)}>
+              {cat}
             </button>
           ))}
         </div>
@@ -96,38 +90,24 @@ const Shop = () => {
           <button>Search</button>
         </div>
 
-        {/* PEPTIDES SECTION */}
-        {showPeptides && filterBySearch(peptideProducts).length > 0 && (
+        {/* Products Grid */}
+        {filteredProducts.length > 0 ? (
           <section style={{marginBottom: 56}}>
-            <h2 className="section-heading">Peptides</h2>
+            <h2 className="section-heading">
+              {activeCategory === 'All' ? 'All Products' : activeCategory}
+            </h2>
             <p className="section-desc">
-              All products are lyophilised powder vials, lab tested and supplied with Certificate of Analysis. Browse our full range of pharmaceutical-grade peptides across healing, anti-aging, weight management, cognitive, and growth hormone categories.
+              {activeCategory === 'All'
+                ? 'All products are lyophilised powder vials, lab tested and supplied with Certificate of Analysis.'
+                : `Browse our ${activeCategory.toLowerCase()} peptides — lab tested with COA included.`}
             </p>
             <div className="product-grid">
-              {filterBySearch(peptideProducts).map(product => (
+              {filteredProducts.map(product => (
                 <ProductCard key={product.id} product={product} />
               ))}
             </div>
           </section>
-        )}
-
-        {/* STACKS SECTION */}
-        {showStacks && filterBySearch(stackProducts).length > 0 && (
-          <section style={{marginBottom: 56}}>
-            <h2 className="section-heading">Stacks</h2>
-            <p className="section-desc">
-              Peptide stacks combine complementary compounds in a single vial for synergistic results. Each stack is lab tested and includes Certificate of Analysis.
-            </p>
-            <div className="product-grid">
-              {filterBySearch(stackProducts).map(product => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* Empty state */}
-        {filterBySearch(peptideProducts).length === 0 && filterBySearch(stackProducts).length === 0 && (
+        ) : (
           <div style={{
             textAlign: 'center', padding: '64px 24px', background: '#fff',
             borderRadius: 12, border: '2px dashed var(--border)',
@@ -136,7 +116,7 @@ const Shop = () => {
             <p style={{fontSize: 18, fontWeight: 700, color: 'var(--text-secondary)', marginBottom: 12}}>
               No products match your search.
             </p>
-            <button onClick={() => { setSearchQuery(''); setActiveSection('all'); }}
+            <button onClick={() => { setSearchQuery(''); setActiveCategory('All'); }}
               style={{
                 color: 'var(--primary)', fontWeight: 700, fontSize: 13,
                 background: 'none', cursor: 'pointer',
