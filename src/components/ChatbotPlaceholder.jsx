@@ -30,44 +30,34 @@ const ChatbotPlaceholder = () => {
     setInputText('');
     setIsTyping(true);
 
-    try {
-      /* 
-       * TODO: UNCOMMENT AND CONFIGURE GEMINI API HERE
-       * 
-       * const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
-       * const model = 'gemini-1.5-flash'; // or gemini-2.5-flash
-       * 
-       * const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}`, {
-       *   method: 'POST',
-       *   headers: { 'Content-Type': 'application/json' },
-       *   body: JSON.stringify({
-       *     system_instruction: {
-       *       parts: [{ text: "You are a knowledgeable assistant for Peptides & You, a premium peptide supplier in the Philippines..." }]
-       *     },
-       *     contents: [
-       *       // Convert previous messages to Gemini format here
-       *       { role: 'user', parts: [{ text: inputText }] }
-       *     ]
-       *   })
-       * });
-       * 
-       * const data = await response.json();
-       * const botText = data.candidates[0].content.parts[0].text;
-       */
+      try {
+        const response = await fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ 
+            // We pass the full conversation history to maintain context
+            messages: [...messages, userMessage] 
+          })
+        });
 
-      // Temporary placeholder response until API is connected
-      setTimeout(() => {
-        setMessages(prev => [...prev, { 
-          text: `I'm currently in placeholder mode! To answer "${userMessage.text}", my owner just needs to add the Gemini 1.5 Flash or Gemini 2.5 API key to my code backend.`, 
-          sender: 'bot' 
-        }]);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const data = await response.json();
+        
+        if (data.reply) {
+          setMessages(prev => [...prev, { text: data.reply, sender: 'bot' }]);
+        } else {
+          setMessages(prev => [...prev, { text: "I'm having trouble thinking right now. Please try again later.", sender: 'bot' }]);
+        }
         setIsTyping(false);
-      }, 1500);
 
-    } catch (error) {
-      console.error("Error connecting to Gemini API:", error);
-      setIsTyping(false);
-    }
+      } catch (error) {
+        console.error("Error connecting to Chat API:", error);
+        setMessages(prev => [...prev, { text: "Connection error. Ensure the Gemini API key is configured in the Cloudflare dashboard.", sender: 'bot' }]);
+        setIsTyping(false);
+      }
   };
 
   return (
